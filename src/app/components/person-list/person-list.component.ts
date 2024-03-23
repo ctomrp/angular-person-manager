@@ -1,8 +1,9 @@
-import { Component, OnChanges, OnInit, SimpleChanges, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { PersonService } from '../../services/person.service';
 import { SexService } from '../../services/sex.service';
 import { DatePipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-person-list',
@@ -19,13 +20,13 @@ export default class PersonListComponent implements OnInit {
   sexes: any[] = [];
 
   ngOnInit(): void {
-    this.listPersons()
-    this.listSexes()
+    this.listPersons();
+    this.listSexes();
   }
 
   listPersons(): void {
     this.personService.list().subscribe((persons: any) => {
-      this.persons = persons;    
+      this.persons = persons;
     });
   }
 
@@ -36,7 +37,7 @@ export default class PersonListComponent implements OnInit {
   }
 
   getSexName(id: number): string {
-    const sex = this.sexes.find(sex => sex.id === id);
+    const sex = this.sexes.find((sex) => sex.id === id);
     return sex ? sex.name : '';
   }
 
@@ -46,4 +47,25 @@ export default class PersonListComponent implements OnInit {
     });
   }
 
+  confirmBox(id: number) {
+    Swal.fire({
+      title: '¿Está seguro que desea borrar el registro?',
+      text: 'La persona borrada no podrá ser recuperada',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, borrar',
+      cancelButtonText: 'No, mantener',
+    }).then((result) => {
+      if (result.value) {
+        this.deletePerson(id);
+        Swal.fire('Persona borrada', 'El registro fue eliminado', 'success');
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Eliminación abortada',
+          'El registro no fue eliminado',
+          'error'
+        );
+      }
+    });
+  }
 }
