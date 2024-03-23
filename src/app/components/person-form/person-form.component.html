@@ -1,0 +1,45 @@
+<h2>{{ title }} persona</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="first_name">Nombre</label>
+        <input type="text" name="first_name" id="first_name" placeholder="John" formControlName="first_name">
+    </div>
+    <div>
+        <label for="last_name">Apellido</label>
+        <input type="text" name="last_name" id="last_name" placeholder="Doe" formControlName="last_name">
+    </div>
+    <div>
+        <label for="dni">R.U.T.</label>
+        <input type="text" name="dni" id="dni" placeholder="12.345.678-k" formControlName="dni">
+    </div>
+    <div>
+        <label for="sex_id">Sexo</label>
+        <select name="sex_id" id="sex_id"  formControlName="sex_id">
+            <option value="" disabled>Seleccione el sexo</option>
+            @for(sex of sexes; track sex.id){
+                <option [value]="sex.id">{{ sex.name }}</option>
+            }
+        </select>
+    </div>
+    <div>
+        <label for="phone_number">Número de teléfono</label>
+        <input type="tel" name="phone_number" id="phone_number" placeholder="933114422" formControlName="phone_number">
+    </div>
+    <div>
+        <label for="address">Dirección</label>
+        <input type="text" name="address" id="address" placeholder="Calle Falsa 123" formControlName="address">
+    </div>
+    <div>
+        <label for="birth_date">Fecha de nacimiento</label>
+        <input type="date" name="birth_date" id="birth_date" formControlName="birth_date">
+    </div>
+    <div>
+        <label for="email">Correo electrónico</label>
+        <input type="email" name="email" id="email" placeholder="correo@dominio.com" formControlName="email">
+    </div>
+
+    <div>
+        <div><button routerLink="/" type="button">Cancelar</button></div>
+        <div><button>Guardar</button></div>
+    </div>
+</form>

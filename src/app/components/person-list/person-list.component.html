@@ -1,0 +1,41 @@
+<h2>Personas</h2>
+
+<div>
+    <button routerLink="new">Registrar persona</button>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>R.U.T.</th>
+            <th>Sexo</th>
+            <th>Número de teléfono</th>
+            <th>Dirección</th>
+            <th>Fecha de nacimiento</th>
+            <th>Correo electrónico</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(person of persons; track person.id){
+            <tr>
+                <td>{{ person.id }}</td>
+                <td>{{ person.first_name }}</td>
+                <td>{{ person.last_name }}</td>
+                <td>{{ person.dni }}</td>
+                <td>{{ getSexName(person.sex_id) }}</td>
+                <td>{{ person.phone_number }}</td>
+                <td>{{ person.address }}</td>
+                <td>{{ person.birth_date | date: 'dd MMM yyyy' }}</td>
+                <td>{{ person.email }}</td>
+                <td>
+                    <button [routerLink]="['edit', person.id]">Editar</button>
+                    <button (click)="deletePerson(person.id)">Eliminar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
