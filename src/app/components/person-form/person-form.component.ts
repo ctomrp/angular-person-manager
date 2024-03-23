@@ -40,14 +40,13 @@ export default class PersonFormComponent implements OnInit {
     ],
     sex_id: ['', [Validators.required]],
     phone_number: ['', Validators.required],
-    address: ['', [Validators.required, Validators.minLength(3)]],
+    address: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
     birth_date: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
   });
 
   ngOnInit(): void {
     this.listSexes();
-    this.dniValidator('dni');
     const id = this.aroute.snapshot.paramMap.get('id');
     if (id) {
       this.title = 'Editar';
@@ -147,11 +146,10 @@ export default class PersonFormComponent implements OnInit {
   val: boolean = false;
   dniValidator(fieldName: string) {
     const control = this.form.get(fieldName);
-    if (control) {
+    if (control && control.dirty && control.touched) { // Only validate if dirty and touched
       const rut = cleanRut(control.value);
       const isValidRut = validateRut(rut);
-      console.log(validateRut(rut));
-
+  
       if (isValidRut && rut.length >= 8 && rut.length <= 9) {
         return 'is-valid';
       } else {
