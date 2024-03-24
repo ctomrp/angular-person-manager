@@ -5,13 +5,13 @@
   <div class="d-flex justify-content-end">
     <button
       routerLink="new"
-      class="btn btn-primary rounded-circle p-3 shadow mb-5"
+      class="btn rounded-circle p-3 shadow fixed-bottom-right"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="28"
         height="28"
-        fill="currentColor"
+        fill="white"
         class="bi bi-person-fill-add"
         viewBox="0 0 16 16"
       >
@@ -59,13 +59,13 @@
               <div class="btn-group">
                 <button
                   [routerLink]="['edit', person.id]"
-                  class="btn btn-success shadow w-50 text-center"
+                  class="btn btn-edit shadow w-50 text-center"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
-                    fill="currentColor"
+                    fill="#333"
                     class="bi bi-pencil-fill"
                     viewBox="0 0 16 16"
                   >
@@ -76,13 +76,13 @@
                 </button>
                 <button
                   (click)="confirmBox(person.id)"
-                  class="btn btn-danger shadow w-50 text-center"
+                  class="btn btn-remove shadow w-50 text-center"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
-                    fill="currentColor"
+                    fill="#333"
                     class="bi bi-trash-fill"
                     viewBox="0 0 16 16"
                   >

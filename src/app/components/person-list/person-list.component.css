@@ -1,0 +1,35 @@
+.fixed-bottom-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    background: linear-gradient(to bottom, #ff00ff, #00ffff);
+    border: transparent;
+}
+
+.fixed-bottom-right:hover {
+    background: linear-gradient(to bottom, #ff00ff, #028f8f);
+}
+
+.btn-edit{
+    text-align: center;
+    border: transparent;
+    background: linear-gradient(to left, #00ff15, #00ffff);
+}
+
+.btn-edit:hover{
+    background: linear-gradient(to left, #00ff15, #21afaf);
+}
+
+.btn-remove{
+    text-align: center;
+    border: transparent;
+    background: linear-gradient(to right, #ff0080, #ff9900);
+}
+
+.btn-remove:hover{
+    text-align: center;
+    border: transparent;
+    background: linear-gradient(to right, #dd1177, #d18718);
+}

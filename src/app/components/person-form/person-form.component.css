@@ -1,0 +1,11 @@
+.btn-ok{
+    color: rgb(18, 67, 141);
+    border: transparent;
+    background: linear-gradient(to left, #00ff15, #00ffff);
+}
+
+.btn-ok:hover{
+    color: rgb(18, 67, 141);
+    border: transparent;
+    background: linear-gradient(to left, #31d13e, #31caca);
+}

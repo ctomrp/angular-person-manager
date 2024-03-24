@@ -2,16 +2,6 @@
     position: relative;
 }
 
-.btn {
-    width: 250px;
-    background: linear-gradient(to bottom, #64ade9, #5f8bb4);
-    padding: .5rem;
-    border: 1px solid rgba(0,0,0,0.2);
-    border-radius: 25px;
-    color: #f3f3f3;
-    margin-top: 1rem;
-}
-
 .route {
     background: linear-gradient(to right, #ff00ff, #00ffff);
     -webkit-background-clip: text;
