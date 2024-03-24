@@ -24,6 +24,8 @@ export default class PersonFormComponent implements OnInit {
   sexes: any[] = [];
   title = 'Registrar';
   btnTitle = 'Guardar';
+  msnTitle = 'Persona registrada';
+  msnBody = 'La persona ha sido registrada exitosamente';
 
   form = this.fb.group({
     first_name: [
@@ -51,6 +53,8 @@ export default class PersonFormComponent implements OnInit {
     if (id) {
       this.title = 'Editar';
       this.btnTitle = 'Actualizar';
+      this.msnTitle = 'Actualización realizada'
+      this.msnBody = 'La persona ha sido actualizada exitosamente'
       this.getPerson(parseInt(id));
     }
   }
@@ -58,8 +62,8 @@ export default class PersonFormComponent implements OnInit {
   alertWithSuccess() {
     this.onSubmit();
     Swal.fire(
-      'Persona registrada',
-      'La persona ha sido registrada exitosamente'
+      this.msnTitle,
+      this.msnBody
     );
   }
 
