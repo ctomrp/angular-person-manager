@@ -15,7 +15,7 @@ export class PersonService {
 
   get(id: number) {
     return this.http.get<PersonInterface>(
-      `${environment.api_person}${id}`
+      `${environment.api_person}/${id}`
     );
   }
 
@@ -24,10 +24,10 @@ export class PersonService {
   }
 
   update(id: number, person: any) {
-    return this.http.patch(`${environment.api_person}${id}`, person);
+    return this.http.patch(`${environment.api_person}/${id}`, person);
   }
 
   delete(id: number) {
-    return this.http.delete(`${environment.api_person}${id}`);
+    return this.http.delete(`${environment.api_person}/${id}`);
   }
 }

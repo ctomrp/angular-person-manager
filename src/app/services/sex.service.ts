@@ -14,7 +14,7 @@ export class SexService {
   }
 
   get(id: number) {
-    return this.http.get<SexInterface>(`${environment.api_sex}${id}`);
+    return this.http.get<SexInterface>(`${environment.api_sex}/${id}`);
   }
 
   create(sex: SexInterface) {
@@ -23,12 +23,12 @@ export class SexService {
 
   update(id: number, sex: SexInterface) {
     return this.http.patch<SexInterface>(
-      `${environment.api_sex}${id}`,
+      `${environment.api_sex}/${id}`,
       sex
     );
   }
 
   delete(id: number) {
-    return this.http.delete<void>(`${environment.api_sex}${id}`);
+    return this.http.delete<void>(`${environment.api_sex}/${id}`);
   }
 }

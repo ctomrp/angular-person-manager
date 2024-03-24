@@ -1,4 +1,4 @@
 export const environment = {
-    api_person: "http://localhost:3000/api/person/",
-    api_sex: "http://localhost:3000/api/sex/"
+    api_person: 'https://node-mysql-backend-production.up.railway.app/api/person',
+    api_sex: 'https://node-mysql-backend-production.up.railway.app/api/sex'
 };

@@ -1,4 +1,5 @@
 <form [formGroup]="form" (ngSubmit)="alertWithSuccess()" class="p-5 rounded">
+  @defer {
   <h2 class="text-center text-shadow mb-5">{{ title }} persona</h2>
   <div class="input-group input-group-sm mb-3">
     <label for="first_name" class="input-group-text">Nombre</label>
@@ -132,4 +133,11 @@
     </button>
     }
   </div>
+} @placeholder {
+  <div class="spinner-border text-info m-5" role="status">
+  </div>
+} @loading {
+  <div class="spinner-border text-info m-5" role="status">
+  </div>
+}
 </form>
