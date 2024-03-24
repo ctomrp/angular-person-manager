@@ -18,15 +18,17 @@ export default class PersonListComponent implements OnInit {
 
   persons: any[] = [];
   sexes: any[] = [];
+  showLoader: boolean = true;
 
   ngOnInit(): void {
-    this.listPersons();
+    this.listPersons()
     this.listSexes();
   }
 
   listPersons(): void {
     this.personService.list().subscribe((persons: any) => {
       this.persons = persons;
+      this.showLoader = false;
     });
   }
 
