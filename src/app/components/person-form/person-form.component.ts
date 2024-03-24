@@ -150,7 +150,7 @@ export default class PersonFormComponent implements OnInit {
   val: boolean = false;
   dniValidator(fieldName: string) {
     const control = this.form.get(fieldName);
-    if (control && control.dirty && control.touched) { // Only validate if dirty and touched
+    if (control && control.dirty && control.touched) {
       const rut = cleanRut(control.value);
       const isValidRut = validateRut(rut);
   
