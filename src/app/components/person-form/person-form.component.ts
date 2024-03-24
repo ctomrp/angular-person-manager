@@ -22,10 +22,10 @@ export default class PersonFormComponent implements OnInit {
 
   person: any;
   sexes: any[] = [];
-  title = 'Registrar';
-  btnTitle = 'Guardar';
-  msnTitle = 'Persona registrada';
-  msnBody = 'La persona ha sido registrada exitosamente';
+  title: string = 'Registrar';
+  btnTitle: string = 'Guardar';
+  msnTitle: string = 'Persona registrada';
+  msnBody: string = 'La persona ha sido registrada exitosamente';
 
   form = this.fb.group({
     first_name: [
