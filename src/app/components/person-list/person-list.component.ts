@@ -4,11 +4,12 @@ import { SexService } from '../../services/sex.service';
 import { DatePipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import Swal from 'sweetalert2';
+import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
   selector: 'app-person-list',
   standalone: true,
-  imports: [DatePipe, RouterModule],
+  imports: [DatePipe, RouterModule, LoaderComponent],
   templateUrl: './person-list.component.html',
   styleUrl: './person-list.component.css',
 })
